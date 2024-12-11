@@ -1,0 +1,30 @@
+---
+import LegalLinks from './footer/LegalLinks.astro';
+import ContactInfo from './footer/ContactInfo.astro';
+import Copyright from './footer/Copyright.astro';
+---
+
+<footer class="bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="space-y-4">
+        <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">IMMUNIT</h3>
+        <p class="text-gray-500">
+          Servicios profesionales de limpieza post mortem en Barcelona. Atención 24/7 con máxima discreción y respeto.
+        </p>
+      </div>
+      
+      <ContactInfo />
+      <LegalLinks />
+      
+      <div class="space-y-4">
+        <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Certificaciones</h3>
+        <p class="text-gray-500">
+          Empresa registrada y certificada para servicios de limpieza especializada y gestión de residuos biológicos.
+        </p>
+      </div>
+    </div>
+    
+    <Copyright />
+  </div>
+</footer>

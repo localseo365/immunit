@@ -1,0 +1,22 @@
+---
+import { servicesContent } from '../content/services';
+---
+
+<section id="servicios" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold text-gray-900">{servicesContent.title}</h2>
+      <p class="mt-4 text-lg text-gray-600">{servicesContent.subtitle}</p>
+    </div>
+    
+    <div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {servicesContent.services.map(service => (
+        <div class="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow">
+          <div class="text-4xl mb-4">{service.icon}</div>
+          <h3 class="text-xl font-semibold text-gray-900">{service.title}</h3>
+          <p class="mt-2 text-gray-600">{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

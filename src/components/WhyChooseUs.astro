@@ -1,0 +1,22 @@
+---
+import { whyChooseUsContent } from '../content/why-choose-us';
+---
+
+<section id="por-que" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold text-gray-900">{whyChooseUsContent.title}</h2>
+      <p class="mt-4 text-lg text-gray-600">{whyChooseUsContent.subtitle}</p>
+    </div>
+    
+    <div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      {whyChooseUsContent.reasons.map(reason => (
+        <div class="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-4xl mb-4">{reason.icon}</div>
+          <h3 class="text-xl font-semibold text-gray-900">{reason.title}</h3>
+          <p class="mt-2 text-gray-600">{reason.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

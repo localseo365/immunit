@@ -1,0 +1,43 @@
+---
+import { heroContent } from '../content/hero';
+---
+
+<section class="relative min-h-[600px] flex items-center pt-32 pb-20">
+  <div class="absolute inset-0 z-0">
+    <img 
+      src="https://www.hemhyra.se/app/uploads/2018/03/sanerare-1200x750.jpg"
+      alt=""
+      class="w-full h-full object-cover"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-gray-900/70"></div>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h1 class="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
+        <span class="block">{heroContent.title}</span>
+        <span class="block text-indigo-400">{heroContent.subtitle}</span>
+      </h1>
+      <p class="mt-6 max-w-2xl mx-auto text-lg text-gray-200">
+        {heroContent.description}
+      </p>
+      <div class="mt-10 flex justify-center gap-4">
+        <a 
+          href="https://wa.link/fjjusu"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-indigo-600 text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-indigo-700 transition-colors"
+        >
+          {heroContent.cta.primary}
+        </a>
+        <a 
+          href="#servicios" 
+          class="bg-white/10 text-white border border-white/20 px-8 py-3 rounded-md text-lg font-medium hover:bg-white/20 transition-colors backdrop-blur-sm"
+        >
+          {heroContent.cta.secondary}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

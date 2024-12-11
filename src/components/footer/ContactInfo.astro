@@ -1,0 +1,27 @@
+---
+const contactInfo = {
+  address: {
+    street: "Camí dels Àngels, 7",
+    area: "Horta-Guinardó",
+    postalCode: "08035",
+    city: "Barcelona"
+  },
+  phone: "629 501 941"
+};
+---
+
+<div class="space-y-4">
+  <h3 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">Contacto</h3>
+  <div class="space-y-2 text-gray-500">
+    <p>
+      {contactInfo.address.street}<br />
+      {contactInfo.address.area}<br />
+      {contactInfo.address.postalCode} {contactInfo.address.city}
+    </p>
+    <p>
+      <a href={`tel:${contactInfo.phone.replace(/\s/g, '')}`} class="hover:text-gray-400 transition-colors">
+        Tel: {contactInfo.phone}
+      </a>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+---
+const menuItems = [
+  { text: "Inicio", href: "/" },
+  { text: "Servicios", href: "#servicios" },
+  { text: "Por qué elegirnos", href: "#por-que" },
+  { text: "Cobertura", href: "#cobertura" },
+  { text: "FAQ", href: "#faq" },
+  { text: "Contacto", href: "#contacto" },
+];
+
+const whatsappLink = "https://wa.link/fjjusu";
+---
+
+<header class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <div class="flex-shrink-0">
+        <a href="/" class="text-2xl font-bold text-gray-800">IMMUNIT</a>
+      </div>
+      
+      <nav class="hidden md:flex space-x-8">
+        {menuItems.map(item => (
+          <a href={item.href} class="text-gray-600 hover:text-gray-900 transition-colors">
+            {item.text}
+          </a>
+        ))}
+      </nav>
+
+      <div class="flex items-center">
+        <a 
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition-colors"
+        >
+          Emergencias 24/7
+        </a>
+      </div>
+    </div>
+  </div>
+</header>

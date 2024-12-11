@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import WhyChooseUs from '../components/WhyChooseUs.astro';
+import Coverage from '../components/Coverage.astro';
+import FAQ from '../components/FAQ.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import { seoConfig } from '../content/seo';
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://immunit.vercel.app/#organization",
+      "name": "IMMUNIT",
+      "description": "Servicios profesionales de limpieza post mortem en Barcelona",
+      "url": "https://immunit.vercel.app",
+      "logo": "https://immunit.vercel.app/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Camí dels Àngels, 7",
+        "addressLocality": "Barcelona",
+        "postalCode": "08035",
+        "addressRegion": "Cataluña",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "41.3851",
+        "longitude": "2.1734"
+      },
+      "telephone": "+34629501941",
+      "email": "info@immunit.vercel.app",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      },
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "41.3851",
+          "longitude": "2.1734"
+        },
+        "geoRadius": "50000"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/immunit",
+        "https://www.facebook.com/immunit"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://immunit.vercel.app/#website",
+      "url": "https://immunit.vercel.app",
+      "name": "IMMUNIT - Limpieza Post Mortem Barcelona",
+      "description": seoConfig.default.description,
+      "publisher": {
+        "@id": "https://immunit.vercel.app/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://immunit.vercel.app/#webpage",
+      "url": "https://immunit.vercel.app",
+      "name": seoConfig.default.title,
+      "description": seoConfig.default.description,
+      "isPartOf": {
+        "@id": "https://immunit.vercel.app/#website"
+      },
+      "about": {
+        "@id": "https://immunit.vercel.app/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "Limpieza Post Mortem Profesional",
+      "provider": {
+        "@id": "https://immunit.vercel.app/#organization"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Barcelona"
+      },
+      "description": "Servicio profesional de limpieza y desinfección post mortem disponible 24/7 en Barcelona y área metropolitana",
+      "serviceType": "Limpieza especializada"
+    }
+  ]
+};
+---
+
+<Layout 
+  title={seoConfig.default.title}
+  description={seoConfig.default.description}
+  keywords={seoConfig.default.keywords.join(", ")}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaData)} />
+  <Header />
+  <main>
+    <Hero />
+    <Services />
+    <WhyChooseUs />
+    <Coverage />
+    <FAQ />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
